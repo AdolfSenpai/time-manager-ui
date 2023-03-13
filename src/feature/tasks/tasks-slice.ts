@@ -36,6 +36,7 @@ const tasksSlice = createSlice<TasksState, {}, "tasks">({
             getAll.fulfilled,
             (state, action) => {
                 state.request = requestState.success(action.payload);
+                state.taskList = action.payload;
             }
         ).addCase(
             getAll.rejected,
