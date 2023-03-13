@@ -5,16 +5,18 @@ import styles from "src/components/App/Content/Content.module.scss";
 import AuthForm from "src/components/AuthForm/AuthForm";
 import TaskList from "src/components/TaskList/TaskList";
 import { TaskGroup } from "src/models/TaskGroup";
-import { User } from "src/models/User";
+import { useAppSelector } from "src/app/hooks";
+import { getRequestResult } from "src/models/RequestState";
 
-export default function Content(props: {user: User | null}) {
+export default function Content() {
 
     const [taskGroups, setTaskGroups] = useState<TaskGroup[]>(getTasksData());
+    const user = useAppSelector(state => getRequestResult(state.user.request));
 
     return (
         <div className={styles.Content}>
             {
-                props.user
+                user
                 &&
                 <div className={styles.TaskGroups}>
                     {

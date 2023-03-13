@@ -1,19 +1,24 @@
-import { useState } from "react";
 import React from "react";
 import styles from "src/components/App/App.module.scss";
 import Content from "src/components/App/Content/Content";
 import NavBar from "src/components/NavBar/NavBar";
-import { User } from "src/models/User";
 import "src/styles/styles.scss";
+import { useAppDispatch } from "src/app/hooks";
+import { userActions } from "src/feature/user/user-slice";
+import { useEffect } from "react";
 
 function App() {
 
-    const [user, setUser] = useState<User | null>(null);
+    const dispatch = useAppDispatch();
+    useEffect(
+        () => { dispatch(userActions.getCurrentUser()) },
+        [],
+    );
 
     return (
         <div className={styles.App}>
-            <NavBar user={user}/>
-            <Content user={user}/>
+            <NavBar />
+            <Content />
         </div>
     );
 }

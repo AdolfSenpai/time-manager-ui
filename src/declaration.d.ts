@@ -9,4 +9,4 @@ declare module "*.scss" {
     export default content;
 }
 
-declare module "*.png"
+declare module "*.png";
