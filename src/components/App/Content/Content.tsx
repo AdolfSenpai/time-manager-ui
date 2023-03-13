@@ -1,17 +1,20 @@
-import { useState } from "react";
 import React from "react";
-import getTasksData from "src/assets/tasks.data";
 import styles from "src/components/App/Content/Content.module.scss";
 import AuthForm from "src/components/AuthForm/AuthForm";
 import TaskList from "src/components/TaskList/TaskList";
-import { TaskGroup } from "src/models/TaskGroup";
 import { useAppSelector } from "src/app/hooks";
 import { getRequestResult } from "src/models/RequestState";
+import { useEffect } from "react";
+import { useAppDispatch } from "src/app/hooks";
+import { tasksActions } from "src/feature/tasks/tasks-slice";
 
 export default function Content() {
 
-    const [taskGroups, setTaskGroups] = useState<TaskGroup[]>(getTasksData());
     const user = useAppSelector(state => getRequestResult(state.user.request));
+    const dispatch = useAppDispatch();
+    const taskList = useAppSelector(state => state.tasks.taskList);
+
+    useEffect(() => { dispatch(tasksActions.getAll()) }, []);
 
     return (
         <div className={styles.Content}>
@@ -19,15 +22,10 @@ export default function Content() {
                 user
                 &&
                 <div className={styles.TaskGroups}>
-                    {
-                        taskGroups?.map(
-                            group => <TaskList
-                                tasks={group.taskList}
-                                name={group.name}
-                                key={group.id}
-                            />
-                        )
-                    }
+                    <TaskList
+                        tasks={taskList}
+                        name={"Test"}
+                    />
                 </div>
                 ||
                 <AuthForm/>
