@@ -8,10 +8,12 @@ const buttonStyles = {
     warn: styles.Warn,
 };
 
-export default function EtmButton({color = "primary", children, ...props}: ButtonHTMLAttributes<HTMLButtonElement> & {
+type EtmButtonAttributes = ButtonHTMLAttributes<HTMLButtonElement> & {
     color?: keyof typeof buttonStyles,
     children?: ReactNode,
-}) {
+};
+
+export default function EtmButton({color = "primary", children, ...props}: EtmButtonAttributes) {
 
     return(
         <button {...props} className={`${styles.EtmButton} ${buttonStyles[color]}`}>
