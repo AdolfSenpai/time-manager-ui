@@ -19,7 +19,33 @@
     transition: all 100ms ease-in-out;
 }
 
-.EtmInput:has(input:focus) .BorderBottom {
-    transform: scaleY(2.5) scaleX(1.02) translateY(1px);
-    border-bottom-color: $accent;
+.InputRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.PasswordIcon {
+    color: $primary;
+    transition: all 100ms ease-in-out;
+}
+
+.ErrorText {
+    font-size: 10px;
+    color: $warn;
+}
+
+.EtmInput:has(input:focus) {
+
+    & .BorderBottom {
+        transform: scaleY(2.5) scaleX(1.02) translateY(1px);
+        border-bottom-color: $accent;
+    }
+
+    & .PasswordIcon {
+        color: $accent;
+    }
+}
+
+.EtmInput:has(.ErrorText) {
+    border-bottom-color: $warn;
 }
