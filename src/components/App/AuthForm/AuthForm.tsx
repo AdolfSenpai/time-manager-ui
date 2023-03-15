@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import styles from "src/components/AuthForm/AuthForm.module.scss";
+import styles from "src/components/App/AuthForm/AuthForm.module.scss";
 import EtmButton from "src/components/common/EtmButton/EtmButton";
 import EtmInput from "src/components/common/EtmInput/EtmInput";
 import { useAppSelector } from "src/app/hooks";

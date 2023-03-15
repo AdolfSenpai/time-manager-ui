@@ -1,8 +1,8 @@
 import React from "react";
-import Contacts from "src/components/NavBar/Contacts/Contacts";
-import styles from "src/components/NavBar/NavBar.module.scss";
-import TitleCard from "src/components/NavBar/TitleCard/TitleCard";
-import UserCard from "src/components/NavBar/UserCard/UserCard";
+import Contacts from "src/components/App/NavBar/Contacts/Contacts";
+import styles from "src/components/App/NavBar/NavBar.module.scss";
+import TitleCard from "src/components/App/NavBar/TitleCard/TitleCard";
+import UserCard from "src/components/App/NavBar/UserCard/UserCard";
 import { useAppSelector } from "src/app/hooks";
 import { getRequestResult } from "src/models/RequestState";
 

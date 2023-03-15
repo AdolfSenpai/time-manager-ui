@@ -1,8 +1,9 @@
 import { useState } from "react";
 import React from "react";
-import TaskRow from "src/components/TaskList/TaskRow/TaskRow";
+import TaskRow from "src/components/App/Content/TaskList/TaskRow/TaskRow";
 import { Task } from "src/models/Task";
-import classes from "src/components/TaskList/TaskList.module.scss";
+import classes from "src/components/App/Content/TaskList/TaskList.module.scss";
+import TaskGroupTitle from "src/components/App/Content/TaskList/TaskTitle/TaskGroupTitle";
 
 function TaskList({ name, tasks }: { name: string, tasks: Task[] }) {
 
@@ -20,7 +21,7 @@ function TaskList({ name, tasks }: { name: string, tasks: Task[] }) {
 
     return (
         <div className={classes.TaskList}>
-            <h1 className={classes.Title}>{name}</h1>
+            <TaskGroupTitle title={name}/>
             <div className={classes.ListOutline}>
                 {
                     tasks.map(task =>

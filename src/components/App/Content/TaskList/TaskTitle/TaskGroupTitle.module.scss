@@ -1,0 +1,31 @@
+@import "src/styles/variables/colors";
+@import "src/styles/variables/global";
+@import "src/styles/mixins";
+
+.TaskGroupTitle {
+    display: flex;
+
+    &:hover .IconButton {
+        color: $primary;
+    }
+}
+
+.Filler {
+    flex: 1 0 0;
+}
+
+.Title {
+    flex: 0 0 0;
+}
+
+.Actions {
+    display: flex;
+    flex: 1 0 0;
+    padding: 0 8px;
+    align-items: center;
+}
+
+.IconButton {
+    margin: 0 4px;
+    @include raisable;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "src/components/App/Content/Content.module.scss";
-import AuthForm from "src/components/AuthForm/AuthForm";
-import TaskList from "src/components/TaskList/TaskList";
+import AuthForm from "src/components/App/AuthForm/AuthForm";
+import TaskList from "src/components/App/Content/TaskList/TaskList";
 import { useAppSelector } from "src/app/hooks";
 import { getRequestResult } from "src/models/RequestState";
 import { useEffect } from "react";

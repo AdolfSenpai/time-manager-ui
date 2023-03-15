@@ -6,7 +6,7 @@
   padding: 4px 16px;
   border: none;
   border-radius: 5px;
-  @include raisable(5px);
+  @include raisable-shadowed(5px);
 
   &.Primary {
     background-color: $primary-light;
