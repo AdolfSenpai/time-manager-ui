@@ -1,0 +1,19 @@
+@import "src/styles/variables/global";
+@import "src/styles/variables/colors";
+
+.ModalDialogue {
+  position: absolute;
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.Content {
+  background: white;
+  padding: 16px;
+  border-radius: $border-radius-default;
+}

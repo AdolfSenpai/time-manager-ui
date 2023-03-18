@@ -1,9 +1,9 @@
 import { useState } from "react";
 import React from "react";
-import TaskRow from "src/components/App/Content/TaskList/TaskRow/TaskRow";
+import TaskRow from "src/components/App/Content/Workspace/TaskList/TaskRow/TaskRow";
 import { Task } from "src/models/Task";
-import classes from "src/components/App/Content/TaskList/TaskList.module.scss";
-import TaskGroupTitle from "src/components/App/Content/TaskList/TaskTitle/TaskGroupTitle";
+import classes from "src/components/App/Content/Workspace/TaskList/TaskList.module.scss";
+import TaskGroupTitle from "src/components/App/Content/Workspace/TaskList/TaskTitle/TaskGroupTitle";
 
 function TaskList({ name, tasks }: { name: string, tasks: Task[] }) {
 
